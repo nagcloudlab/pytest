@@ -1,0 +1,24 @@
+
+👉 pytest is installed into a virtual environment with the following steps:
+
+python -m venv venv
+source venv/bin/activate (or venv\Scripts\activate.bat/venv\Scripts\Activate.ps1 on Windows)
+pip install pytest
+
+👉 pytest can be run in several different ways:
+
+pytest: With no arguments, pytest searches the local directory and subdirectories for tests.
+pytest <filename>: Runs the tests in one file
+pytest <filename> <filename> ...: Runs the tests in multiple named files
+pytest <dirname>: Starts in a particular directory (or more than one) and recursively searches for tests
+
+
+👉 Test discovery refers to how pytest finds your test code and depends on naming:
+
+Test files should be named test_<something>.py or <something>_test.py.
+Test methods and functions should be named test_<something>.
+Test classes should be named Test<Something>.
+
+👉 The possible outcomes of a test function include: PASSED (.), FAILED (F), SKIPPED (s), XFAIL (x), XPASS (X), and ERROR (E).
+👉 The -v or --verbose command-line flag is used to reveal more verbose output.
+👉 The --tb=no command-line flag is used to to turn off tracebacks.
