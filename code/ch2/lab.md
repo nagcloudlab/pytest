@@ -76,3 +76,123 @@ pytest -vv test_alt_fail.py
 When calling pytest.fail() or raising an exception directly, we don’t get the wonderful assert rewriting provided by pytest. 
 
 However, there are reasonable times to use pytest.fail(), such as in an assertion helper.
+
+
+Writing Assertion Helper Functions
+==================================
+
+bash```
+cd /path/to/code/ch2
+pytest test_helper.py
+pytest -vv test_helper.py
+```
+
+
+Testing for Expected Exceptions
+================================
+
+pytest.raises() is a context manager that returns an exception object. We can use this object to check the exception type and message.
+
+
+bash```
+cd /path/to/code/ch2
+pytest test_experiment.py
+```
+
+bash```
+cd /path/to/code/ch2
+pytest test_exceptions.py
+```
+
+
+Structuring Test Functions
+==========================
+
+Arrange,Act,Assert (AAA) pattern
+or
+Given, When, Then pattern
+
+
+Given/Arrange—A starting state. This is where you set up data or the environment to get ready for the action.
+
+When/Act—Some action is performed. This is the focus of the test—the behavior we are trying to make sure is working right.
+
+Then/Assert—Some expected result or end state should happen. At the end of the test, we make sure the action resulted in the expected behavior.
+
+
+
+Grouping Tests with Classes
+===========================
+
+bash```
+cd /path/to/code/ch2
+pytest test_classes.py::TestEquality
+pytest test_classes.py::TestEquality::test_equality
+
+
+Running a Subset of Tests
+=========================
+
+single test method
+
+bash```
+pytest path/to/test_file.py::TestClass::test_method
+```
+
+All tests in a class
+
+bash```
+pytest path/to/test_file.py::TestClass
+```
+
+Single test function
+
+bash```
+pytest path/to/test_file.py::test_function
+```
+
+All tests in a file
+
+bash```
+pytest path/to/test_file.py
+```
+
+All tests in a directory
+
+bash```
+pytest path/to/directory
+```
+
+All tests in a directory with a pattern
+
+bash```
+pytest path/to/directory -k pattern
+```
+
+
+bash```
+cd /path/to/code
+
+Running a single test method, test class, or module:
+
+pytest ch2/test_classes.py::TestEquality::test_equality
+pytest ch2/test_classes.py::TestEquality
+pytest ch2/test_classes.py
+
+Running a single test function or module:
+
+pytest ch2/test_classes.py::test_defaults
+pytest ch2/test_card.py
+
+Running all tests in a directory:
+
+pytest ch2
+
+cd /path/to/code/ch2
+pytest -v -k TestEquality
+pytest -v -k TestEq
+pytest -v --tb=no -k equality
+pytest -v --tb=no -k "equality and not equality_fail"
+pytest -v --tb=no -k "(dict or ids) and not TestEquality"
+
+```
