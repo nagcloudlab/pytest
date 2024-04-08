@@ -4,11 +4,11 @@
 
 👉 The Cards application (and pytest) is installed into a virtual environment with the following steps:
 
-cd /path/to/code
-python -m venv venv --prompt cards
-source venv/bin/activate (or venv\Scripts\activate.bat on Windows)
-pip install ./cards_proj
-pip install pytest
+    cd /path/to/code
+    python -m venv venv --prompt cards
+    source venv/bin/activate (or venv\Scripts\activate.bat on Windows)
+    pip install ./cards_proj
+    pip install pytest
 
 👉 pytest uses assert rewriting, which allows us to use standard Python assert expressions.
 

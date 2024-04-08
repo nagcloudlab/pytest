@@ -3,11 +3,6 @@
 Writing Test Functions
 =======================
 
-
-Application Code ( cards_proj )
--------------------------------
-
-
 install cards_proj package
 
 bash```
@@ -27,6 +22,9 @@ cards delete 1
 cards
 
 ```
+
+Using Test Functions
+====================
 
 
 bash```
@@ -72,9 +70,7 @@ pytest test_alt_fail.py
 pytest -vv test_alt_fail.py
 ```
 
-
 When calling pytest.fail() or raising an exception directly, we don’t get the wonderful assert rewriting provided by pytest. 
-
 However, there are reasonable times to use pytest.fail(), such as in an assertion helper.
 
 
@@ -128,6 +124,7 @@ bash```
 cd /path/to/code/ch2
 pytest test_classes.py::TestEquality
 pytest test_classes.py::TestEquality::test_equality
+
 
 
 Running a Subset of Tests

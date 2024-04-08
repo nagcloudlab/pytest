@@ -18,6 +18,7 @@ def test_defaults():
 
 
 class TestEquality:
+
     def test_equality(self):
         c1 = Card("something", "brian", "todo", 123)
         c2 = Card("something", "brian", "todo", 123)
@@ -26,6 +27,7 @@ class TestEquality:
         c1 = Card("something", "brian", "todo", 123)
         c2 = Card("something", "brian", "todo", 4567)
         assert c1 == c2
+        
     def test_inequality(self):
         c1 = Card("something", "brian", "todo", 123)
         c2 = Card("completely different", "okken", "done", 123)
