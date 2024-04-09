@@ -1,45 +1,104 @@
 
 
-Pytest Fixtures
-===============
-
-Pytest fixtures are a way to provide data, test doubles, or setup code to tests. 
-Fixtures are defined using the `@pytest.fixture` decorator. 
-Fixtures can be used by passing the fixture name to a test function. Fixtures can also be used by other fixtures, allowing for fixture composition.
-
-Fixtures can be used to provide data to tests, setup and teardown code, and test doubles.
-
 
 bash```
-
-
-
-display built-in fixtures
-pytest --fixtures
-
-cd path/to/code/ch3
-pytest -v test_fixtures.py
-
-
+pytest -v --setup-show test_fixtures.py
 ```
-
 
 Using Fixtures for Setup and Teardown
 =====================================
 
+```bash
+pytest  --setup-show test_count_initial.py
+```
 
-bash```
-cards count
-cards add first-item
-cards add second-item
+```bash
+pytest  --setup-show -v test_count.py
+```
+
+Specifying Fixture Scope
+========================
+
+scope='function' => Run once per test function
+scope='class' => Run once per test class
+scope='module' => Run once per test module
+scope="package" => Run once per test package
+scope="session" => Run once per test session
 
 
-bash```
-pytest -v test_count_initial.py
+
+```bash
+pytest  --setup-show -v test_mod_scope.py
 ```
 
 
-bash```
-pytest -v test_count.py
-pytest -v --setup-show test_count.py
+
+```bash
+cd path/to/code/ch3/a
+pytest  --setup-show -v test_count.py
+pytest --setup-show -v 
+```
+
+Using Multiple Fixture Levels
+=============================
+
+```bash
+cd path/to/code/ch3/b
+pytest --setup-show -v 
+```
+
+
+Finding Where Fixtures Are Defined
+==================================
+
+```bash
+pytest --fixtures 
+```
+
+You can also use --fixtures-per-test to see what fixtures are used by each test and where the fixtures are defined:
+
+```bash
+pytest --fixtures-per-test test_count.py::test_empty
+```
+
+
+Using Multiple Fixtures per Test or Fixture
+===========================================
+
+
+```bash
+cd path/to/code/ch3/c
+pytest --setup-show -v 
+```
+
+
+Deciding Fixture Scope Dynamically
+==================================
+
+```bash
+cd path/to/code/ch3/d
+pytest --setup-show -v test_count.py
+pytest --setup-show --func-db -v test_count.py
+```
+
+
+Using autouse for Fixtures That Always Get Used
+===============================================
+
+
+```bash
+cd path/to/code/ch3
+pytest --setup-show -v test_autouse.py
+
+pytest --setup-show -v --capture=no test_autouse.py
+or
+pytest --setup-show -v -s test_autouse.py
+
+
+Renaming Fixtures
+=================
+
+```bash
+cd path/to/code/ch3
+pytest --setup-show -v test_rename.py
 ```

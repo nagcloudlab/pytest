@@ -1,0 +1,15 @@
+
+
+👉 Fixtures are @pytest.fixture() decorated functions.
+👉 Test functions or other fixtures depend on a fixture by putting its name in their parameter list.
+👉 Fixtures can return data using return or yield.
+👉 Code before the yield is the setup code. Code after the yield is the teardown code.
+👉 Fixtures can be set to function, class, module, package, or session scope. 
+👉 The default is function scope. 
+👉 You can even define the scope dynamically.
+👉 Multiple test functions can use the same fixture.
+👉 Multiple test modules can use the same fixture if it’s in a conftest.py file
+👉 Multiple fixtures at different scope can speed up test suites while maintaining test isolation.
+👉 Tests and fixtures can use multiple fixtures.
+👉 Autouse fixtures don’t have to be named by the test function.
+👉 You can have the name of a fixture be different than the fixture function name.

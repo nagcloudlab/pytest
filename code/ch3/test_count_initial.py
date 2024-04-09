@@ -12,4 +12,3 @@ def test_empty():
         db.close()
 
         assert count == 0
-
