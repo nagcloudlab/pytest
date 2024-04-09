@@ -1,0 +1,9 @@
+
+
+👉 We can parametrize test functions, creating many test cases, 
+when we apply the @pytest.mark.parametrize() decorator.
+
+👉 We can parametrize fixtures with @pytest.fixture(params=()). 
+This is helpful if the fixture needs to do different work based on the parameter values.
+
+👉 We can generate complex parametrization sets with pytest_generate_tests.

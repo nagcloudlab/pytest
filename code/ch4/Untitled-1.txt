@@ -1,0 +1,18 @@
+
+
+setattr(target, name, value, raising=True)—Sets an attribute
+
+delattr(target, name, raising=True)—Deletes an attribute
+
+setitem(dic, name, value)—Sets a dictionary entry
+
+delitem(dic, name, raising=True)—Deletes a dictionary entry
+
+setenv(name, value, prepend=None)—Sets an environment variable
+
+delenv(name, raising=True)—Deletes an environment variable
+
+syspath_prepend(path)—Prepends path to sys.path, which is Python’s list of import locations
+
+chdir(path)—Changes the current working directory
+

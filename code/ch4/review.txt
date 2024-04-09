@@ -1,0 +1,14 @@
+
+
+
+
+👉The tmp_path and tmp_path_factory fixtures are used to for temporary directories. 
+tmp_path is function scope, and tmp_path_factory is session scope. 
+
+
+👉 capsys can be used to capture stdout and stderr. 
+It can also be used to temporarily turn off output capture. 
+Related fixtures are capsysbinary, capfd, capfdbinary, and caplog.
+
+
+👉 monkeypatch can be used to change the application code or the environment. 
