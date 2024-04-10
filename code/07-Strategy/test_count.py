@@ -8,7 +8,7 @@ from cards import Card
 
 
 def test_count_no_cards(cards_db):
-    assert cards_db.count() == 1
+    assert cards_db.count() == 0
 
 
 def test_count_one_card(cards_db):

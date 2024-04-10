@@ -1,6 +1,11 @@
 
 
 
+```bash
+pytest
+```
+
+
 Markers
 =======
 
@@ -64,9 +69,9 @@ Selecting Tests with Custom Markers
 cd ..
 cd smoke
 pytest --tb=no test_start_unmarked.py
-pytest --tb=no -m "slow" test_start.py
+pytest --tb=no -m "smoke" test_start.py
 
-pytest --tb=no -m "exception" test_start.py
+pytest --tb=no -vs -m "exception" test_start.py
 ```
 
 Marking Files, Classes, and Parameters
@@ -109,7 +114,7 @@ Combining Markers with Fixtures
 ```bash
 cd ..
 cd combined
-pytest -v -s test_num_cards.py
+pytest -v -s --setup-show test_num_cards.py
 
 
 Listing Markers
@@ -120,4 +125,3 @@ cd ..
 cd multiple
 pytest --markers
 ```
-

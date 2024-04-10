@@ -89,3 +89,13 @@ Test the CLI enough to verify the API is getting properly called for all feature
 Test the following core features thoroughly: add, count, delete, finish, list, start, and update.
 Include cursory tests for config and version.
 Test our use of TinyDB with subsystem tests against db.py.
+
+-------------------------------------------------------------------------------------
+
+
+
+```bash
+cards --help
+pytest -v
+```
+

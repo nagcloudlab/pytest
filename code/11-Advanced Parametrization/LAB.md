@@ -1,5 +1,14 @@
 
 
+
+- Using data structures or objects as values. 
+- params with ids
+- Using dynamic values. ( i.e. values that are generated at runtime)
+- Using multiple parameters.
+- Intercepting values with a fixture  ( i.e indirect parametrization)
+
+
+
 Using Complex Values
 --------------------
 
@@ -37,6 +46,11 @@ Using an ID List
 pytest -v -s test_ids.py::test_id_list
 ```
 
+```bash
+pytest -v -s test_ids.py::test_summary_variants
+```
+
+
 
 Parametrizing with Dynamic Values
 ---------------------------------
@@ -44,6 +58,9 @@ Parametrizing with Dynamic Values
 ```bash
 pytest -v -s test_param_gen.py
 ```
+
+
+
 
 Using Multiple Parameters
 -------------------------

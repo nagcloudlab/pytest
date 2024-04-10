@@ -8,3 +8,5 @@ def test_foo():
 
 def test_bar():
     assert bar_module.bar() == "bar"
+
+

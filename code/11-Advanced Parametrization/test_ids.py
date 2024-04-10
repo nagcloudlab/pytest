@@ -54,7 +54,7 @@ def test_id_func(cards_db, starting_card):
 
 
 @pytest.mark.parametrize(
-    "starting_card", card_list, ids=lambda c: c.state
+    "starting_card", card_list, ids=lambda c: c.state.upper()
 )
 def test_id_lambda(cards_db, starting_card):
     ...
@@ -80,7 +80,7 @@ def test_id_param(cards_db, starting_card):
     assert card.state == "done"
 
 
-id_list = ["todo", "in prog", "done"]
+id_list = ["1", "2", "3"]
 
 
 @pytest.mark.parametrize("starting_card", card_list, ids=id_list)

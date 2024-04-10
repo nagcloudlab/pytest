@@ -15,7 +15,7 @@ def test_start(cards_db):
     assert c.state == "in prog"
 
 
-@pytest.mark.smok
+@pytest.mark.smoke
 @pytest.mark.exception
 def test_start_non_existent(cards_db):
     """

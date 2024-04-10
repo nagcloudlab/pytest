@@ -1,5 +1,8 @@
 
 
+```bash
+pytest --help
+```
 
 
 Understanding pytest Configuration Files
@@ -18,6 +21,7 @@ conftest.py:
 __init__.py: 
     When put into test subdirectories, 
     this file allows you to have identical test file names in multiple test directories.
+
 
 tox.ini, pyproject.toml, and setup.cfg: 
     These files can take the place of pytest.ini. 
@@ -41,14 +45,40 @@ Determining a Root Directory and Config File
 - Even before it starts looking for test files to run, pytest reads the configuration file—the pytest.ini file or the tox.ini, setup.cfg, or pyproject.toml files that contain a pytest section.
 
 
+- If you’ve passed in a test directory, pytest starts looking there.
 
 ```bash
-cd project
+pytest dir1
+```
+
+- If you’ve passed in multiple files or directories, pytest starts at the common ancestor of all of them
+
+
+```bash
+pytest dir1 dir2 file1.py file2.py
+```
+
+- If you don’t pass in a file or directory, it starts at the current directory. 
+
+```bash
 pytest
 ```
 
+-  If pytest finds a configuration file at the starting directory, that’s the root. 
 
-Sharing Local Fixtures and Hook Functions with conftest.py
+- If not, pytest goes up the directory tree until it finds a configuration file that has a pytest section in it.
+
+- Once pytest finds a configuration file, it marks the directory where it found it as the root directory, or rootdir. 
+
+- This root directory is also the relative root of test node IDs. It also tells you where it found a configuration file.
+
+
+---------------
+
+
+- Sharing Local Fixtures and Hook Functions with conftest.py
+
+----------------
 
 
 Avoiding Test File Name Collision with __init__.py
