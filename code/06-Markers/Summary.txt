@@ -1,0 +1,47 @@
+Here’s an example pytest.ini file:
+
+​ 	​[pytest]​
+​ 	markers =
+​ 	    ​<marker_name>:​ ​<marker_description>​
+​ 	    ​<marker_name>:​ ​<marker_description>​
+​ 	addopts =
+​ 	    ​--strict-markers​
+​ 	    ​-ra​
+​ 	
+​ 	xfail_strict = ​true
+
+
+
+Custom markers are declared with the markers section.
+
+
+
+- The --strict-markers flag tells pytest to raise an error if it sees us using an undeclared marker. The default is a warning.
+
+- The -ra flag tells pytest to list the reason for any test that isn’t passing. This includes fail, error, skip, xfail, and xpass.
+
+- Setting xfail_strict = true turns any passing tests marked with xfail into failed tests since our understanding of the system behavior was wrong. Leave this out if you want xfail tests that pass to result in XPASS.
+
+- Custom markers can be used to select a subset of tests to run with -m <marker name> or not run with -m "not <marker name>".
+
+- Markers are placed on tests using the syntax, @pytest.mark.<marker_name>.
+
+- Markers on classes also use the @pytest.mark.<marker_name> syntax and will result in each class test method being marked.
+
+- Files can have markers, using pytestmark = pytest.mark.<marker_name> or pytestmark = [pytest.mark.<marker_one>, pytest.mark.<marker_two>].
+
+- For parametrized tests, an individual parametrization can be marked with pytest.param(<actual parameter>, marks=pytest.mark.<marker_name>). Like the file version, the parametrized version can accept a list of markers.
+
+- The -m flag can use logic operators and, or, not, and parentheses.
+
+- pytest --markers lists all available markers.
+
+- Builtin markers provide extra behavior functionality, and we discussed skip, skipif, and xfail.
+
+- Tests can have more than one marker, and a marker can be used on more than one test.
+
+- From a fixture, you can access markers using request.node.get_closest_marker(<marker_name>).
+
+- Markers can have parameters that can be accessed with .args and .kwargs attributes.
+
+- Faker is a handy Python package that provides a pytest fixture called faker to generate fake data.

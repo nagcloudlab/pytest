@@ -1,0 +1,9 @@
+You can have pytest settings in one primary configuration file per project: pytest.ini, pyproject.toml, tox.ini, or setup.cfg.
+
+pytest calls the primary configuration file location the root directory or rootdir.
+
+Settings live in the configuration file, including options and flags defined by the addopts configuration setting.
+
+The conftest.py file is used for fixtures and hook functions shared by all tests in the same directory or lower.
+
+The __init__.py files in test subdirectories allow you to duplicate test file names.

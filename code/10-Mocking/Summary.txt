@@ -1,0 +1,10 @@
+Mock objects can simulate return values, raise exceptions, and record how they were called.
+
+Using autospec=True when mocking objects, such as CardsDB, can help avoid mock drift and make sure our use of the mock in tests is the same as the API of the object being mocked.
+
+Return values can be simulated with mock_object.return_value = <new value>.
+
+Exceptions can be simulated with mock_object.side_effect = Exception.
+
+Mock objects return new mock objects when called as a function, unless you’ve set their return_value.
+

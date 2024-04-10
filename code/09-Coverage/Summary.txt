@@ -1,0 +1,15 @@
+pytest --cov=cards <test path> to run with a simple report
+
+pytest --cov=cards --cov-report=term-missing <test path> to show which lines weren’t run
+
+pytest --cov=cards --cov-report=html <test path> to generate an HTML report
+
+For running coverage by itself, use:
+
+coverage run --source=cards -m pytest <test path> to run the test suite with coverage
+coverage report to show a simple terminal report
+coverage report --show-missing to show which lines weren’t run
+coverage html to generate an HTML report
+Even if you ran coverage from pytest --cov=..., you can run different reports or generate HTML using coverage report and coverage html.
+
+The --cov and --source flags tell coverage what code to watch, and can either be the name of an installed package, or the path to the application code.
