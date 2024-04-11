@@ -34,6 +34,7 @@ Typer is a library that makes it easy to build command-line interfaces in Python
 
 ```bash
 pytest -v -s test_typer_testing.py::test_typer_runner
+pytest -v -s test_typer_testing.py::test_cards_cli
 ```
 
 
@@ -41,8 +42,14 @@ Mocking a Class and Methods
 =========================
 
 ```bash
+pytest -v -s test_mock.py::test_mock_version
+pytest -v -s test_mock.py::test_version
+```
+
+```bash
 pytest -v -s test_mock.py::test_mock_CardsDB
 ```
+
 
 ```bash
 pytest -v -s test_mock.py::test_mock_path

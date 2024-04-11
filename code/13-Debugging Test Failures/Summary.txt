@@ -1,0 +1,5 @@
+We installed an editable version of Cards with pip install -e ./cards_proj.
+
+We used many pytest flags for debugging. There’s list of useful flags at ​Debugging with pytest Flags​.
+
+We used pdb to debug the tests. A subset of pdb commands is at ​Debugging with pdb​.
